@@ -21,6 +21,7 @@ jobs:
           # reads the version from cfproxy/go.mod, so CI always matches the
           # toolchain the dependencies require (tls-client needs go 1.27).
           go-version-file: 'cfproxy/go.mod'
+          cache-dependency-path: 'cfproxy/go.sum'
 
       - name: Set up JDK
         uses: actions/setup-java@v4
