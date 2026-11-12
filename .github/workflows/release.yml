@@ -1,0 +1,40 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          # reads the version from cfproxy/go.mod, so CI always matches the
+          # toolchain the dependencies require (tls-client needs go 1.27).
+          go-version-file: 'cfproxy/go.mod'
+
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      # Cross-compiles cfproxy for darwin/linux/windows and packages the jar.
+      # Pure Go, so an Ubuntu runner can build binaries for every platform.
+      - name: Build extension
+        run: ./build.sh
+
+      - name: Publish Release with jar
+        uses: softprops/action-gh-release@v2
+        with:
+          files: extension/target/cf-bypass-extension.jar
+          generate_release_notes: true

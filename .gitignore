@@ -1,0 +1,24 @@
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Build output
+extension/target/
+extension/src/main/resources/bin/
+
+# cfproxy compiled binary & runtime data (certs/keys regenerate on demand)
+cfproxy/cfproxy
+cfproxy/cfproxy.new
+cfproxy/data/
+
+# Logs / pid files
+*.log
+*.pid
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# UI test renders
+.ui-thumbs/
