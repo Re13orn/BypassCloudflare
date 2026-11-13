@@ -1,5 +1,11 @@
 # BypassCloudflare
 
+[![GitHub stars](https://img.shields.io/github/stars/Re13orn/BypassCloudflare?style=social)](https://github.com/Re13orn/BypassCloudflare/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/Re13orn/BypassCloudflare?style=social)](https://github.com/Re13orn/BypassCloudflare/forks)
+[![Latest release](https://img.shields.io/github/v/release/Re13orn/BypassCloudflare?display_name=tag)](https://github.com/Re13orn/BypassCloudflare/releases/latest)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Platform](https://img.shields.io/badge/platform-macOS%20%7C%20Linux%20%7C%20Windows-lightgrey)](#requirements)
+
 A Burp Suite extension that stops Cloudflare (and similar WAFs) from blocking your
 traffic by replacing Burp's Java TLS fingerprint with a real browser's — JA3/JA4
 and HTTP/2 — so your requests look like they come from Chrome, Firefox, Safari, etc.
