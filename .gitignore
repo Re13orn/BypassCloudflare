@@ -4,7 +4,10 @@ Thumbs.db
 
 # Build output
 extension/target/
-extension/src/main/resources/bin/
+
+# NOTE: extension/src/main/resources/bin/ holds pre-compiled cfproxy binaries that
+# ARE committed, so the BApp Store auto-build (plain `mvn package` at the root)
+# works without a Go toolchain. Rebuild them with ./build.sh after Go changes.
 
 # cfproxy compiled binary & runtime data (certs/keys regenerate on demand)
 cfproxy/cfproxy

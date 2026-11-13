@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>dev.burp</groupId>
+    <artifactId>bypasscloudflare</artifactId>
+    <version>0.1.0</version>
+    <packaging>pom</packaging>
+
+    <name>BypassCloudflare</name>
+    <description>Burp Suite extension that bypasses Cloudflare TLS fingerprinting.</description>
+
+    <!--
+      Root build entry point. The BApp Store auto-build looks for pom.xml at the
+      repository root and runs `mvn package`. The cfproxy Go binaries are already
+      committed under extension/src/main/resources/bin/, so this build needs only
+      Maven + a JDK, no Go toolchain. To rebuild those binaries from Go source,
+      run ./build.sh (requires Go).
+    -->
+    <modules>
+        <module>extension</module>
+    </modules>
+</project>
